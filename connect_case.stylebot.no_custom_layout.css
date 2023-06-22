@@ -1,0 +1,556 @@
+:root {
+  font-size: 16px;
+  --case-info: cornsilk;
+  --pre-call-detail: hsl(36deg 100% 75% / 80%);
+  --highlight-border-radius: .4rem;
+  --required-input-field: lightcyan;
+  --useless-detail: cornsilk;
+
+  --card-background-color-opacity: 95%;
+  --card-background-color: hsl(0deg 0% 100% / var(--card-background-color-opacity));
+}
+
+/* My cases | queue pool list | case no. counter */
+:root {
+  counter-reset: case_count;
+}
+
+body>redbull-app>div>div>queues-deck>div main>div.results>compact-case-row>div.body::before {
+  content: counter(case_count) ' .';
+  counter-increment: case_count;
+}
+
+
+
+/* case status */
+body>redbull-app>div>div>case-details>div:nth-child(1) action-bar>div>div.action-buttons>span {
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
+  color: black;
+  background-color: var(--required-input-field);
+  border-radius: var(--highlight-border-radius);
+  padding: .5rem 1rem;
+}
+
+/* program */
+#read-card-tab-panel-home expandable-panel div.above-section>div>div:nth-child(2)>home-data-item>div.data-pair-content.capitalized {
+  color: red;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+
+/* CID */
+#read-card-tab-panel-home expandable-panel div.above-section>div>div:nth-child(5)>home-data-item>div.data-pair-content.capitalized {
+  color: blue;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+  padding: .2em;
+}
+
+
+
+/* Tools Ads */
+#read-card-tab-panel-home>div>div.section.body.home>dynamic-component>home-card-content-wrapper>div>div.details-container>customer-info>div>configurable-tools>div>expandable-panel>div>div.above-section>div>div:nth-child(2)>a>* {
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 1rem;
+  margin: 0;
+  padding: .2rem .5rem;
+}
+
+
+/* other contact [ name, email] */
+#read-card-tab-panel-home home-card-content-wrapper>div>div>customer-info other-contacts>div>div .name,
+#read-card-tab-panel-home home-card-content-wrapper>div>div>customer-info other-contacts>div>div .email {
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-style: italic;
+  color: black;
+  /* text-decoration: underline; */
+  padding: .3em 1.5em;
+  margin-bottom: 1.1rem;
+  cursor: text;
+}
+
+/* case task type */
+#read-card-tab-panel-home>div>div.section.body>dynamic-component>home-card-content-wrapper .content.issue-detail-container issue-detail cuf-form-field:nth-child(4)>div>div>div:nth-child(n+2) {
+  background-color: var(--case-info);
+  border-radius: var(--highlight-border-radius);
+  font-weight: 500;
+  color: black;
+  padding: .2em;
+  font-size: 1rem;
+}
+
+/* attribution model */
+#read-card-tab-panel-home>div>div.section.body>dynamic-component>home-card-content-wrapper .content.issue-detail-container issue-detail cuf-form-field:nth-child(5)>div>div>div:nth-child(2) {
+  background-color: var(--case-info);
+  border-radius: var(--highlight-border-radius);
+  font-weight: 400;
+  color: black;
+  padding: .2em;
+  font-size: 1rem;
+}
+
+
+/* resolution recipient */
+#read-card-tab-panel-home customer-info>div>div:nth-child(6)>div>div>material-dropdown-select {
+  background-color: var(--required-input-field);
+  border-radius: var(--highlight-border-radius);
+  font-weight: bold;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* customer [ delete ] buttons  */
+#read-card-tab-panel-home dynamic-component customer-info contact-info material-button[debug-id="delete-button"] {
+  display: none;
+}
+
+/* customer email */
+#read-card-tab-panel-home dynamic-component customer-info contact-info contact-email-field>div>div>div.email-with-controls span {
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  padding: .1em 1.3em;
+  margin: .1em;
+  cursor: text;
+}
+
+/* customer phone */
+#read-card-tab-panel-home dynamic-component customer-info contact-info>div>div>c2d-phone-field>div>div>pii-value {
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  padding: .1em 1.3em;
+  margin: .1em;
+  cursor: text;
+}
+
+/* hidden mask info */
+.unmask-button {
+  cursor: pointer;
+}
+
+/* hide useless popup when unmasking hidden info */
+.popup [autofocus].content .feedback-label,
+.popup [autofocus].content [debugid="thumbs"] {
+  display: none;
+}
+
+/* customer phone | hide useless phone icon */
+#read-card-tab-panel-home dynamic-component customer-info contact-info .call-button {
+  display: none;
+}
+
+
+/* seller name */
+#read-card-tab-panel-home customer-info>div>div:nth-child(6)>div>internal-user-info>div>div:nth-child(2) {
+  background-color: var(--useless-detail);
+  border-radius: var(--highlight-border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  padding: .2em 2.05em;
+  margin: .1em
+}
+
+/* seller email */
+#read-card-tab-panel-home customer-info>div>div:nth-child(6)>div>internal-user-info>div>div.details {
+  background-color: var(--useless-detail);
+  border-radius: var(--highlight-border-radius);
+  /* font-size: 1rem; */
+  font-weight: 500;
+  color: black;
+  padding: .2em 2.5em;
+  cursor: text;
+}
+
+/* Submitted internally | text font */
+#read-card-tab-panel-home issue-detail cuf-form-field div.form-value {
+  color: black;
+  font-size: 1rem;
+  /* font-style: italic; */
+}
+
+/* sales program  */
+#read-card-tab-panel-home>div>div.section.body>dynamic-component>home-card-content-wrapper .content.issue-detail-container issue-detail cuf-form-field:nth-child(6)>div>div>div:nth-child(2) {
+  color: red;
+  font-style: italic;
+}
+
+/* website url hyperlink */
+#read-card-tab-panel-home>div>div.section.body>dynamic-component>home-card-content-wrapper .content.issue-detail-container issue-detail cuf-form-field a[href]:not(a[href*="screenshot.googleplex.com/"]) {
+  color: blue;
+  text-decoration: underline;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 2;
+  padding: 0.25rem .5rem;
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+}
+
+/* instruction  */
+#read-card-tab-panel-home>div>div.section.body>dynamic-component>home-card-content-wrapper .content.issue-detail-container issue-detail cuf-form-field:nth-child(9)>div>div>div:nth-child(2) {
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+  font-size: .9rem;
+  font-weight: 500;
+  color: black;
+  padding: .2em;
+}
+
+/* contact [ email , phone ] */
+#read-card-tab-panel-home issue-detail [arial-label*="email"] ng-template,
+#read-card-tab-panel-home issue-detail cuf-form-field pii-value>span:not(.unmask-button) {
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  font-style: italic;
+  padding: .3em 2em;
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+  cursor: text;
+}
+
+/* mask button, hidden [ phone, email, address ] */
+#read-card-tab-panel-home issue-detail cuf-form-field pii-value>span.unmask-button,
+#read-card-tab-panel-case-log>div>div.section.body>dynamic-component>case-log-card-content-wrapper>div>div.case-log-container.active-case-log-container>activities-container>div.activities .message-body-panel .unmask-button {
+  color: black;
+  font-weight: 400;
+  font-size: .9rem;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 0.2em 1em;
+  cursor: pointer;
+  box-shadow: 0 0 2px -1px;
+  /* background-color: var(--pre-call-detail); border-radius: var(--highlight-border-radius); */
+}
+
+/* contact name  */
+#read-card-tab-panel-home>div>div.section.body>dynamic-component>home-card-content-wrapper .content.issue-detail-container issue-detail cuf-form-field:nth-child(17)>div>div>div:nth-child(2) {
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  padding: .2em;
+}
+
+/* contact number */
+#read-card-tab-panel-home>div>div.section.body>dynamic-component>home-card-content-wrapper .content.issue-detail-container issue-detail cuf-form-field:nth-child(18)>div>div>div:nth-child(2) span {
+  background-color: var(--pre-call-detail);
+  border-radius: var(--highlight-border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  padding: .3em 2.5em;
+  font-style: italic;
+}
+
+/* appointment time */
+#read-card-tab-panel-home>div>div.section.body>dynamic-component>home-card-content-wrapper .content.issue-detail-container issue-detail cuf-form-field:nth-child(19)>div>div>div:nth-child(2) {
+  /* background-color: var(--pre-call-detail); border-radius: var(--highlight-border-radius); */
+  font-size: 1rem;
+  /* font-weight: 600; */
+  color: black;
+  padding: .2em;
+  font-style: italic;
+}
+
+/* internal CID */
+#read-card-tab-panel-home>div>div.section.body>dynamic-component>home-card-content-wrapper .content.issue-detail-container issue-detail cuf-form-field:nth-child(22)>div>div>div:nth-child(2) {
+  font-size: 1rem;
+  color: blue;
+}
+
+/* card editor | email | solution offerred */
+body>redbull-app write-deck card card-widget material-checkbox[debug-id="solution_offered_checkbox"].checkbox {
+  opacity: 1;
+  font-weight: 500;
+}
+
+body>redbull-app write-deck card card-widget material-checkbox[debug-id="solution_offered_checkbox"].checkbox.disabled {
+  opacity: .5;
+  font-weight: 200;
+}
+
+/* card email cc | highlight when without cc */
+body>redbull-app>div>div>case-details>div.case-body>card-deck>div.decks write-deck card[card-type="compose"].write-card .container .headers>.header:nth-child(3) email-address-input>.container:not(:has(email-address-chip)) {
+  background-color: var(--required-input-field);
+  border-radius: .4rem;
+  transition-delay: 1s;
+}
+
+
+/* card email | font label [ to, cc, bcc ] */
+body>redbull-app>div>div>case-details>div.case-body>card-deck>div.decks write-deck card[card-type="compose"].write-card .container .headers>.header .label {
+  color: black;
+}
+
+/* useless bottom display logged in email */
+#myspanemail {
+  display: none;
+}
+
+/* useless right bar | policy */
+body>redbull-app>.app-container>.content-container companion-panel-container {
+  display: none;
+}
+
+
+
+/* case id */
+#read-card-tab-panel-home>div>div:nth-child(1)>card-widget>div>case-id-widget .case-id-title {
+  display: flex;
+  /* position: fixed; */
+  padding: .25rem 1rem;
+  padding-right: 0;
+  top: 6.7rem;
+  left: 5rem;
+  z-index: 10;
+  font-weight: 500;
+  font-size: 1.3rem;
+  background-color: blanchedalmond;
+  border-radius: var(--highlight-border-radius);
+}
+
+
+/* case log | case note  */
+#read-card-tab-panel-case-log>div>div.section.body>dynamic-component>case-log-card-content-wrapper>div>div.case-log-container.active-case-log-container div[buttondecorator].note {
+  background-color: hsl(60deg 100% 85% / var(--card-background-color-opacity));
+  border-top: 1px dashed black;
+}
+
+#read-card-tab-panel-case-log>div>div.section.body>dynamic-component>case-log-card-content-wrapper>div>div.case-log-container.active-case-log-container div[buttondecorator][aria-label*="Phone Note"].note .header-line.line1 {
+  background-color: var(--required-input-field);
+  border-radius: var(--highlight-border-radius);
+  width: 6rem;
+}
+
+/* case log date */
+card#read-card-tab-panel-case-log .date {
+  /* font-size: .9rem; */
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* plugin custom element | KL Tag Team */
+
+/* header | useless note */
+noted[data-id*="-"] {
+  display: none;
+}
+
+
+/* case overview | custom case info */
+._casecalendar_info {
+  font-size: 1rem;
+}
+
+._casecalendar_info a[href] {
+  color: blue;
+}
+
+/* case id */
+._casecalendar_info a[data-infocase="case_id"] {
+  background-color: var(--case-info);
+  border-radius: .4rem;
+  margin: .25rem;
+  padding: .2rem 1rem;
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* customer email, name, phone, ads cid */
+._casecalendar_info [data-infocase="customer_adsid_format"],
+._casecalendar_info [data-infocase="customer_name"],
+._casecalendar_info [data-infocase="customer_email"],
+._casecalendar_info [data-infocase="customer_contact"] {
+  background-color: var(--pre-call-detail);
+  border-radius: .4rem;
+  margin: .25rem;
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: .2rem 1rem;
+}
+
+
+/* AM Seller name email */
+._casecalendar_info [data-infocase="am_email"],
+._casecalendar_info [data-infocase="am_name"] {
+  background-color: var(--useless-detail);
+  border-radius: .4rem;
+  margin: .25rem;
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: .2rem 1rem;
+}
+
+/* task type */
+._casecalendar_info [data-title^="Task"],
+._casecalendar_info [data-title^="Attribution Model"] {
+  background-color: var(--case-info);
+  border-radius: .4rem;
+  margin: .25rem;
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* website */
+._casecalendar_info [data-title^="Website"] a {
+  background-color: var(--pre-call-detail);
+  border-radius: .4rem;
+  padding: .25rem 1rem;
+  margin: .25rem;
+  color: blue;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+
+/* appointment time */
+._casecalendar_info [data-infocase="appointment_time"] {
+  background-color: var(--pre-call-detail);
+  border-radius: .4rem;
+  margin: .25rem;
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline;
+  flex: unset;
+  padding: .2rem 1rem;
+}
+
+
+
+
+
+
+/* custom case note writer */
+/* body card hight | useless clamping on card height */
+.hasdock card-deck .decks {
+  max-height: unset;
+}
+
+
+/* modal popup body */
+#sinature-modal .modal-content {
+  margin-top: 2vh;
+  border-radius: .4rem;
+  background-color: rgba(253 253 253 / var(--card-background-color-opacity));
+}
+
+/* left column */
+#sinature-modal #signature {
+  background-color: unset;
+}
+
+/* right column */
+#sinature-modal #preview-note {
+  height: unset;
+}
+
+
+/* checkbox  */
+#sinature-modal .container-checkmark {
+  display: inline;
+  margin: 0 .5rem;
+  padding: 0;
+  padding-left: 2rem;
+}
+
+/* fake checkbox */
+#sinature-modal .container-checkmark>.checkmark-checkbox {
+  display: none;
+}
+
+/* real checkbox */
+#sinature-modal .container-checkmark>input[type=checkbox] {
+  opacity: unset;
+  position: unset;
+  margin: 0;
+  vertical-align: middle;
+  height: 1rem;
+  width: 1rem;
+  scale: 1.3;
+}
+
+/* checkbox item text */
+#sinature-modal .container-checkmark~span {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* buttons */
+#sinature-modal button#addToNote {
+  width: 100%;
+  /* height: 100%; */
+  /* padding: 4rem; */
+}
+
+/* useless button */
+#sinature-modal button#resetNote {
+  display: none;
+  background-color: red;
+}
+
+
+/* useless left button popup */
+a._panel_shortcut_go_teamvietnam {
+  display: none;
+}
+
+
+
+/* body card hight | useless clamping on card height */
+.hasdock card-deck .decks {
+  max-height: unset;
+}
+
+div>div.dock-float {
+  max-height: .5rem;
+  transition: .25s ease;
+  transition-delay: .7s;
+  z-index: 2;
+}
+
+div>div.dock-float:hover {
+  max-height: 3.6rem;
+  transition-delay: .05s;
+}
