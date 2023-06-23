@@ -618,7 +618,7 @@ body>redbull-app>div>app-bar>app-bar>div>tab-navigation>overflow-layout>nav>over
 
 /* case id */
 /* case id | fixed floating */
-#read-card-tab-panel-home>div>div.home>dynamic-component>home-card-content-wrapper>div>div>customer-info>div>div:nth-child(1)>h2 {
+#read-card-tab-panel-home>div>div.home>dynamic-component>home-card-content-wrapper>div>div>customer-info case-id {
   display: flex;
   position: fixed;
   /* top: 6.7rem; */
@@ -629,6 +629,8 @@ body>redbull-app>div>app-bar>app-bar>div>tab-navigation>overflow-layout>nav>over
   font-size: 1.5rem;
   background-color: blanchedalmond;
   border-radius: var(--highlight-border-radius);
+  padding: .25rem 1rem;
+  padding-right: 0;
 }
 
 /* case id */
@@ -971,7 +973,12 @@ body>redbull-app>div>div>case-details>div.case-body>card-deck>div.decks>read-dec
   font-size: 1rem;
   top: 3.7rem;
   left: 21rem;
-  padding: 0.25rem 2rem;
+  padding: .4rem 1.5rem;
+  color: black;
+}
+
+#appointmentDateTime.is-past {
+  color: grey;
 }
 
 #appointmentDateTime>* {
@@ -980,5 +987,5 @@ body>redbull-app>div>div>case-details>div.case-body>card-deck>div.decks>read-dec
   font-style: italic;
   display: inline-block;
   margin: 0;
-  padding: .25rem;
+  padding: 0 .25rem;
 }
